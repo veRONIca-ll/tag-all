@@ -1,0 +1,33 @@
+# tokens and ids
+
+telebot_token = '{bot-token}'
+chat_for_logs = {chat_id for logs} # may not use if there is no neccessary
+
+# commands
+greeting = 'hi, i am {bot_name}!\n\
+Nice to meet you!\n\
+I\'m here to help you to tag all users in the chat'
+
+help = '/start - to learn about the bot\n\
+/help - to learn commands\n\
+/register @... - to register nicknames of users\n\
+/all - to tag all !registerd! users'
+
+# messages
+success_register = 'Users have been successfully registered!\nYou can use command /all to check if it works correctly.'
+failed_register = 'The error was occured while register proccess.\nPlease, try later.'
+sorry_message = 'Sorry, but it seems like you have not registered users.\nUse command /register.'
+
+# file for storing info about users 
+''' 
+structure of the file is folowwing >> 
+    {
+        chats : {
+            id : {
+                '@me',
+                '@someone'
+            },
+        }
+    }
+'''
+filename = 'users.json'
