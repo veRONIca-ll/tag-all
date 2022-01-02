@@ -6,11 +6,12 @@ def read_full(filename: str) -> json:
         data = json.load(file)
     return data 
 
+
 def write_to(filename: str, data: dict) -> bool:
     try:
         with open(filename, 'r+') as file:
             file_data = json.load(file)
-            file_data['chats'].append(data)
+            file_data['chats'].insert(0, data)            
             file.seek(0)
             json.dump(file_data, file, indent = 4)
         return True
